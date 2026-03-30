@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoNPC Desafios</title>
+  <meta name="theme-color" content="#06070a">
+  <meta name="description" content="Gestiona desafios enviados y recibidos en NoNPC.">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="app app-layout community-shell">
+    <section class="card">
+      <nav class="top-nav" aria-label="Navegacion principal">
+        <a class="nav-link" href="../index.html">Inicio</a>
+        <a class="nav-link" href="../missions/">Misiones</a>
+        <a class="nav-link" href="../community/">Comunidad</a>
+        <a class="nav-link nav-link-active" href="./index.html">Desafios</a>
+        <a class="nav-link" href="../feed/">Feed</a>
+        <a class="nav-link" href="../ranking/">Ranking</a>
+        <a class="nav-link" href="../profile/">Perfil</a>
+      </nav>
+
+      <div class="hero">
+        <p class="eyebrow">Desafios entre usuarios</p>
+        <h1>Desafios</h1>
+        <p class="hero-copy">Acepta, rechaza y sigue las misiones que otros usuarios te mandaron.</p>
+      </div>
+    </section>
+
+    <section class="community-layout">
+      <aside class="card">
+        <div class="community-form">
+          <div class="field-group">
+            <label for="challengeUsernameInput">Tu usuario</label>
+            <input id="challengeUsernameInput" class="input" type="text" maxlength="30" placeholder="Ej: ana.zip">
+          </div>
+          <p id="challengeStatus" class="helper-text">Usamos tu usuario actual para filtrar desafios recibidos.</p>
+        </div>
+      </aside>
+
+      <section class="community-grid">
+        <section class="history-card">
+          <div class="history-header">
+            <h2>Recibidos</h2>
+            <span id="incomingCount">0 pendientes</span>
+          </div>
+          <div id="incomingChallenges" class="ideas-list"></div>
+          <div id="incomingEmpty" class="empty-state">No tenes desafios pendientes ahora.</div>
+        </section>
+
+        <section class="history-card">
+          <div class="history-header">
+            <h2>Misiones activas</h2>
+            <span id="activeMissionsCount">0 activas</span>
+          </div>
+          <div id="activeMissionsList" class="ideas-list"></div>
+          <div id="activeMissionsEmpty" class="empty-state">Acepta un desafio y aparecera aca.</div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./challenges.js"></script>
+</body>
+</html>

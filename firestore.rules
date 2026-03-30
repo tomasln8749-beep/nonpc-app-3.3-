@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    match /users/{userId} {
+      allow read: if signedIn();
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+    }
+
+    match /usernames/{usernameKey} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow update: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+
+    match /mission_ideas/{ideaId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.createdByUserId == request.auth.uid;
+      allow update: if signedIn();
+    }
+
+    match /missions/{missionId} {
+      allow read: if signedIn();
+      allow create, update: if signedIn();
+    }
+
+    match /challenges/{challengeId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.fromUserId == request.auth.uid;
+      allow update: if signedIn();
+    }
+
+    match /active_missions/{missionId} {
+      allow read: if signedIn();
+      allow create, update: if signedIn();
+    }
+
+    match /completed_missions/{missionId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.completedByUserId == request.auth.uid;
+      allow update: if signedIn();
+    }
+
+    match /activities/{activityId} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+    }
+  }
+}

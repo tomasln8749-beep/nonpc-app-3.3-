@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoNPC Perfil</title>
+  <meta name="theme-color" content="#06070a">
+  <meta name="description" content="Perfil del usuario en NoNPC.">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="app app-layout page-stack">
+    <section class="card">
+      <nav class="top-nav" aria-label="Navegacion principal">
+        <a class="nav-link" href="../index.html">Inicio</a>
+        <a class="nav-link" href="../missions/">Misiones</a>
+        <a class="nav-link" href="../community/">Comunidad</a>
+        <a class="nav-link" href="../challenges/">Desafios</a>
+        <a class="nav-link" href="../feed/">Feed</a>
+        <a class="nav-link" href="../ranking/">Ranking</a>
+        <a class="nav-link nav-link-active" href="./index.html">Perfil</a>
+      </nav>
+
+      <div class="hero">
+        <p class="eyebrow">Perfil activo</p>
+        <h1 id="profileName">anon</h1>
+        <p class="hero-copy">Una lectura clara del estado actual del usuario: XP, racha, completadas y actividad reciente.</p>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="stat-card stat-card-xp">
+        <span class="stat-label">XP total</span>
+        <strong class="stat-value" id="profileXp">0 XP</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Completadas</span>
+        <strong class="stat-value" id="profileCompleted">0</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Racha diaria</span>
+        <strong class="stat-value" id="profileStreak">0 dias</strong>
+      </article>
+    </section>
+
+    <section class="history-card page-stack">
+      <div class="history-header">
+        <h2>Actividad reciente</h2>
+        <span id="profileActivityCount">0 eventos</span>
+      </div>
+      <div id="profileActivityList" class="ideas-list"></div>
+      <div id="profileActivityEmpty" class="empty-state">Todavia no hay actividad reciente para este usuario.</div>
+    </section>
+  </main>
+
+  <script type="module" src="./profile.js"></script>
+</body>
+</html>

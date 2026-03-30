@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoNPC Login</title>
+  <meta name="theme-color" content="#06070a">
+  <meta name="description" content="Inicia sesion en NoNPC.">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="app app-layout auth-page">
+    <section class="card auth-card">
+      <div class="hero">
+        <p class="eyebrow">Bienvenido de nuevo</p>
+        <h1>Entrar a NoNPC</h1>
+        <p class="hero-copy">Guarda tu XP, tu racha y todo tu progreso social en una cuenta real.</p>
+      </div>
+
+      <div class="auth-stack">
+        <button class="btn btn-primary auth-google-btn" id="googleLoginBtn" type="button">Continuar con Google</button>
+
+        <div class="auth-divider">
+          <span>o usa email</span>
+        </div>
+
+        <form id="emailAuthForm" class="community-form auth-form">
+          <div class="field-group">
+            <label for="emailInput">Email</label>
+            <input id="emailInput" class="input" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field-group">
+            <label for="passwordInput">Contrasena</label>
+            <input id="passwordInput" class="input" type="password" minlength="6" autocomplete="current-password" required>
+          </div>
+
+          <div class="auth-actions">
+            <button class="btn btn-primary" type="submit">Iniciar sesion</button>
+            <button class="btn btn-ghost" type="button" id="registerBtn">Crear cuenta</button>
+          </div>
+        </form>
+
+        <p class="helper-text" id="authStatus">Tu sesion se mantiene iniciada en este dispositivo.</p>
+        <pre class="config-warning" id="firebaseConfigWarning"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./login.js"></script>
+</body>
+</html>

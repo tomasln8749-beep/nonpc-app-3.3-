@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoNPC Feed</title>
+  <meta name="theme-color" content="#06070a">
+  <meta name="description" content="Actividad reciente de la comunidad de NoNPC.">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="app app-layout community-shell">
+    <section class="card">
+      <nav class="top-nav" aria-label="Navegacion principal">
+        <a class="nav-link" href="../index.html">Inicio</a>
+        <a class="nav-link" href="../missions/">Misiones</a>
+        <a class="nav-link" href="../community/">Comunidad</a>
+        <a class="nav-link" href="../challenges/">Desafios</a>
+        <a class="nav-link nav-link-active" href="./index.html">Feed</a>
+        <a class="nav-link" href="../ranking/">Ranking</a>
+        <a class="nav-link" href="../profile/">Perfil</a>
+      </nav>
+
+      <div class="hero">
+        <p class="eyebrow">Actividad reciente</p>
+        <h1>Feed</h1>
+        <p class="hero-copy">Lo ultimo que paso en NoNPC: misiones completadas, desafios enviados y rachas alcanzadas.</p>
+      </div>
+    </section>
+
+    <section class="history-card community-grid">
+      <div class="history-header">
+        <h2>Actividad</h2>
+        <span id="activitiesCount">0 eventos</span>
+      </div>
+
+      <div id="activitiesList" class="ideas-list"></div>
+      <div id="activitiesEmpty" class="empty-state">Todavia no hay actividad para mostrar.</div>
+    </section>
+  </main>
+
+  <script type="module" src="./feed.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoNPC Misiones</title>
+  <meta name="theme-color" content="#06070a">
+  <meta name="description" content="Centro de misiones de NoNPC.">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="app app-layout page-stack">
+    <section class="card">
+      <nav class="top-nav" aria-label="Navegacion principal">
+        <a class="nav-link" href="../index.html">Inicio</a>
+        <a class="nav-link nav-link-active" href="./index.html">Misiones</a>
+        <a class="nav-link" href="../community/">Comunidad</a>
+        <a class="nav-link" href="../challenges/">Desafios</a>
+        <a class="nav-link" href="../feed/">Feed</a>
+        <a class="nav-link" href="../ranking/">Ranking</a>
+        <a class="nav-link" href="../profile/">Perfil</a>
+      </nav>
+
+      <div class="hero">
+        <p class="eyebrow">Centro de juego</p>
+        <h1>Misiones</h1>
+        <p class="hero-copy">Tu resumen de misiones: ultima, diaria, activas y actividad reciente en un mismo lugar.</p>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="stat-card stat-card-xp">
+        <span class="stat-label">Ultima mision</span>
+        <strong class="stat-value" id="lastMissionTitle">Sin datos</strong>
+        <p class="helper-text" id="lastMissionMeta">Todavia no hay una mision registrada.</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Mision diaria</span>
+        <strong class="stat-value" id="dailyMissionPreview">Sin datos</strong>
+        <p class="helper-text" id="dailyMissionPreviewMeta">Disponible cuando entras al dashboard.</p>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Desafios activos</span>
+        <strong class="stat-value" id="activeMissionCount">0</strong>
+        <p class="helper-text">Misiones activas enviadas por otros usuarios.</p>
+      </article>
+    </section>
+
+    <section class="history-card page-stack">
+      <div class="history-header">
+        <h2>Historial reciente</h2>
+        <span id="recentMissionCount">0 items</span>
+      </div>
+      <div id="recentMissionsList" class="ideas-list"></div>
+      <div id="recentMissionsEmpty" class="empty-state">Todavia no hay misiones recientes para mostrar.</div>
+    </section>
+  </main>
+
+  <script type="module" src="./missions.js"></script>
+</body>
+</html>

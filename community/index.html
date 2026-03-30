@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoNPC Comunidad</title>
+  <meta name="theme-color" content="#06070a">
+  <meta name="description" content="Comparti ideas de misiones y vota las mejores en la comunidad de NoNPC.">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icons/icon-192.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="app app-layout community-shell">
+    <section class="card">
+      <nav class="top-nav" aria-label="Navegacion principal">
+        <a class="nav-link" href="../index.html">Inicio</a>
+        <a class="nav-link" href="../missions/">Misiones</a>
+        <a class="nav-link nav-link-active" href="./index.html">Comunidad</a>
+        <a class="nav-link" href="../challenges/">Desafios</a>
+        <a class="nav-link" href="../feed/">Feed</a>
+        <a class="nav-link" href="../ranking/">Ranking</a>
+        <a class="nav-link" href="../profile/">Perfil</a>
+      </nav>
+
+      <div class="hero">
+        <p class="eyebrow">Ideas de la comunidad</p>
+        <h1>Comunidad</h1>
+        <p class="hero-copy">Subi ideas de misiones, comenta las que te gusten y empuja arriba las mas raras, utiles o incomodas.</p>
+      </div>
+    </section>
+
+    <section class="community-layout">
+      <aside class="card">
+        <form id="ideaForm" class="community-form">
+          <div class="field-group">
+            <label for="usernameInput">Tu usuario</label>
+            <input id="usernameInput" class="input" type="text" maxlength="30" placeholder="Ej: ana.zip" required>
+          </div>
+
+          <div class="field-group">
+            <label for="titleInput">Titulo de la idea</label>
+            <input id="titleInput" class="input" type="text" maxlength="80" placeholder="Ej: Hablar con alguien en una fila" required>
+          </div>
+
+          <div class="field-group">
+            <label for="descriptionInput">Descripcion</label>
+            <textarea id="descriptionInput" class="textarea" maxlength="220" placeholder="Conta la idea en una o dos frases cortas." required></textarea>
+          </div>
+
+          <p class="helper-text" id="formStatus">Las ideas se guardan localmente como la coleccion <code>mission_ideas</code>.</p>
+
+          <button class="btn btn-primary" type="submit">Enviar idea</button>
+        </form>
+
+        <section class="profiles-block">
+          <div class="history-header">
+            <h2>Perfiles</h2>
+            <span id="profilesCount">0 usuarios</span>
+          </div>
+          <p class="helper-text">Elige una mision y manda un desafio directo a otro usuario.</p>
+          <div id="profilesList" class="profiles-list"></div>
+          <div id="profilesEmpty" class="empty-state">Todavia no hay perfiles suficientes para desafiar.</div>
+        </section>
+      </aside>
+
+      <section class="history-card community-grid">
+        <div class="history-header">
+          <h2>Ideas mas votadas</h2>
+          <span id="ideasCount">0 ideas</span>
+        </div>
+
+        <div id="ideasList" class="ideas-list"></div>
+        <div id="ideasEmpty" class="empty-state">Todavia no hay ideas. La primera mision de la comunidad puede ser tuya.</div>
+      </section>
+    </section>
+
+    <section class="history-card community-grid">
+      <div class="history-header">
+        <h2>Misiones completadas</h2>
+        <span id="completedMissionsCount">0 completadas</span>
+      </div>
+
+      <div id="completedMissionsList" class="ideas-list"></div>
+      <div id="completedMissionsEmpty" class="empty-state">Todavia no hay misiones completadas para validar.</div>
+    </section>
+  </main>
+
+  <script type="module" src="./community.js"></script>
+</body>
+</html>
